@@ -104,16 +104,19 @@ b {
   color: var(--gray-color);
 }
 
-.primary-button {
+.sumbit-button {
   width: 100%;
   padding: 12px;
+  font-size: 16px;
+  margin-top: 16px;
+}
+
+.primary-button {
   border: none;
   border-radius: 6px;
   background-color: var(--primary-color);
   color: var(--white-color);
   cursor: pointer;
-  font-size: 16px;
-  margin-top: 16px;
 }
 
 .primary-button:hover,
