@@ -27,7 +27,7 @@
   font-weight: normal;
   color: inherit;
   color: var(--black-color);
-  font-size: 14px;
+  font-size: 12px;
 }
 *:focus {
   outline: none;
