@@ -91,6 +91,14 @@ b {
   border: 1px solid var(--primary-color);
 }
 
+.left-text {
+  width: 100%;
+  text-align: left;
+}
+.center-text {
+  width: 100%;
+  text-align: center;
+}
 .right-text {
   width: 100%;
   text-align: right;
@@ -122,4 +130,21 @@ b {
 .primary-button:hover,
 .primary-button:active {
   background-color: var(--dark-primary-color);
+}
+
+.check-input {
+  border: none;
+  border-radius: 6px;
+  background-color: var(--white-color);
+  color: var(--gray-color);
+  border: 1px solid var(--gray-color);
+  cursor: pointer;
+  padding: 10px 30px;
+  width: 100%;
+}
+
+.check-input.checked {
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  font-family: "TmoneyRoundWindExtraBold";
 }
