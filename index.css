@@ -148,3 +148,9 @@ b {
   border: 1px solid var(--primary-color);
   font-family: "TmoneyRoundWindExtraBold";
 }
+
+.check-input:disabled {
+  color: var(--gray-color);
+  background-color: var(--dark-gray-color);
+  border: 1px solid var(--dark-gray-color);
+}
