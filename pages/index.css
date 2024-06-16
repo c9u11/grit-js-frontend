@@ -81,6 +81,12 @@ b {
   font-size: 20px;
   font-family: "TmoneyRoundWindExtraBold";
 }
+.sub-title {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: "TmoneyRoundWindExtraBold";
+}
 
 .text-input {
   width: 100%;
@@ -139,14 +145,16 @@ b {
   background-color: var(--primary-color);
   color: var(--white-color);
   cursor: pointer;
+  padding: 4px 8px;
 }
 
 .secondary-button {
   border: none;
   border-radius: 6px;
   background-color: var(--light-gray-color);
-  color: var(--white-color);
+  color: var(--dark-gray-color);
   cursor: pointer;
+  padding: 4px 8px;
 }
 
 .primary-button:hover,
@@ -345,6 +353,98 @@ a.setting.active {
   background: no-repeat center center url("/images/setting-active.svg");
 }
 
+.tabs {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--light-gray-color);
+  padding: 6px;
+  gap: 6px;
+  border-radius: 10px;
+}
+
+.tab {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px 0px;
+  text-decoration: none;
+  font-family: "TmoneyRoundWindExtraBold";
+  font-size: 12px;
+}
+
+.rank-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid var(--light-gray-color);
+  cursor: pointer;
+}
+.rank-item .rank {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-color);
+  border-radius: 50%;
+}
+
+.rank-item .rank.first {
+  background-color: #ffcf23;
+}
+.rank-item .rank.second {
+  background-color: #9ebfdd;
+}
+.rank-item .rank.third {
+  background-color: #e59143;
+}
+
+.ellipse {
+  width: 100%;
+  height: 14px;
+  background: no-repeat center center url("/images/ellipse.svg");
+}
+
+.rank-statistics {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid var(--light-gray-color);
+  cursor: pointer;
+}
+.rank-statistics .item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+.rank-statistics .title {
+  font-family: "TmoneyRoundWind";
+  font-size: 12px;
+  color: var(--gray-color);
+}
+.rank-statistics .content {
+  font-family: "TmoneyRoundWindExtraBold";
+  font-size: 16px;
+  color: var(--primary-color);
+}
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 /* 기존 코드 */
 /* .right-image {
   float: right;
