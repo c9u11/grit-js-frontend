@@ -23,7 +23,7 @@
       <button class="primary-button sumbit-button">회원가입</button>
       <div>
         <span class="secondary-text">이미 회원이신가요?</span>
-        <a class="primary-text" href="/login.html"><b>로그인</b></a>
+        <a class="primary-text" href="/pages/login.html"><b>로그인</b></a>
       </div>
     </form>
   </content>
@@ -37,7 +37,7 @@
       const response = reqSignup(username, email, password);
       if (response.code === 200) {
         alert('회원가입이 완료되었습니다.');
-        location.href = './login.html';
+        location.href = '/pages/login.html';
       } else {
         alert('회원가입에 실패했습니다.');
       }
