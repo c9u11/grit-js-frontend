@@ -143,7 +143,6 @@ b {
   cursor: pointer;
 }
 
-
 .primary-button:hover,
 .primary-button:active {
   background-color: var(--dark-primary-color);
@@ -176,37 +175,37 @@ b {
   font-family: "TmoneyRoundWindExtraBold";
 }
 
-.logo-text{
+.logo-text {
   font-family: Tmoney RoundWind;
   font-size: 23px;
   font-weight: 800;
   line-height: 29.92px;
-  color:#58c76a;
+  color: #58c76a;
 }
 
-.right-image{
- float: right;
+.right-image {
+  float: right;
 }
 
-.right-icon{
-  width: Hug (20px)px;
-  height: Hug (20.52px)px;
+.right-icon {
+  width: Hug (20px) px;
+  height: Hug (20.52px) px;
   top: 13.74px;
   left: 331px;
   gap: 0px;
   opacity: 0px;
 }
 
-.home-top-bar{
+.home-top-bar {
   width: 375px;
   height: 48px;
-  top : 44px;
-  border-bottom: 1px solid var(--LightGray, #F2F4F5);
+  top: 44px;
+  border-bottom: 1px solid var(--LightGray, #f2f4f5);
 }
 
-.home-middle-bar{
+.home-middle-bar {
   width: 375px;
-  height: 630px;   /*이거 fixed 붙이면 사이즈 조절은 되는데 가운데로 글자가 모임*/
+  height: 630px; /*이거 fixed 붙이면 사이즈 조절은 되는데 가운데로 글자가 모임*/
   top: 92px;
   padding: 12px 18px 12px 18px;
   gap: 16px;
@@ -214,21 +213,21 @@ b {
 }
 
 .black-text {
-  font-family: 'Tmoney RoundWind';
+  font-family: "Tmoney RoundWind";
   font-size: 20px;
   font-weight: 800;
   line-height: 26.02px;
-  text-align: left; 
+  text-align: left;
   color: black;
 }
 
-.grey-text{
+.grey-text {
   font-family: Tmoney RoundWind;
   font-size: 9px;
   font-weight: 400;
   line-height: 11.71px;
   text-align: left;
-  color : #AAAAAA;
+  color: #aaaaaa;
 }
 
 .text-with-line {
@@ -240,7 +239,7 @@ b {
   flex: 1;
 }
 
-.home-container-1{
+.home-container-1 {
   width: 339px;
   height: 170px;
   padding: 12px 12px 6px 12px;
@@ -251,13 +250,13 @@ b {
   background-size: contain;
 }
 
-.image-ellipse img{
+.image-ellipse img {
   width: 10px;
   height: 10px;
   background-color: #58c76a;
 }
 
-.text-white{
+.text-white {
   font-family: Tmoney RoundWind;
   font-size: 12px;
   font-weight: 800;
@@ -266,7 +265,7 @@ b {
   color: white;
 }
 
-.text-home-title{
+.text-home-title {
   font-family: Tmoney RoundWind;
   font-size: 12px;
   font-weight: 400;
@@ -276,7 +275,7 @@ b {
   margin-top: 110px;
 }
 
-.text-home-paragraph{
+.text-home-paragraph {
   font-family: Tmoney RoundWind;
   font-size: 9px;
   font-weight: 400;
@@ -285,16 +284,16 @@ b {
   color: white;
 }
 
-.home-bottom-bar{
-  width: Fixed (375px)px;
-  height: Fixed (56px)px;
+.home-bottom-bar {
+  width: Fixed (375px) px;
+  height: Fixed (56px) px;
   top: 722px;
   gap: 0px;
   opacity: 0px;
   color: white;
 }
 
-.rank-top-bar{
+.rank-top-bar {
   width: 341px;
   height: 47px;
   top: 104px;
@@ -303,42 +302,42 @@ b {
   gap: 8px;
   border-radius: 20px 0px 0px 0px;
   opacity: 0px;
-  color:#888888
+  color: #888888;
 }
 
-.rank-ranking-button{
+.rank-ranking-button {
   width: 159.5px;
   height: 34px;
   padding: 0px 37px 0px 37px;
   gap: 10px;
   border-radius: 20px;
   opacity: 0px;
-  background-color:#58C76A;
-  border : none;
+  background-color: #58c76a;
+  border: none;
 }
 
-.rank-additional-button{
+.rank-additional-button {
   width: 159.5px;
   height: 34px;
   padding: 0px 37px 0px 37px;
   gap: 10px;
   border-radius: 20px;
   opacity: 0px;
-  background-color: #FFFFFF;
-  border : none;
+  background-color: #ffffff;
+  border: none;
 }
 
-.text-click-on{
+.text-click-on {
   font-family: Tmoney RoundWind;
   font-size: 13px;
   font-weight: 800;
   line-height: 16.91px;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   text-decoration: none;
 }
 
-.text-click-off{
+.text-click-off {
   font-family: Tmoney RoundWind;
   font-size: 13px;
   font-weight: 800;
@@ -348,7 +347,7 @@ b {
   text-decoration: none;
 }
 
-.rank-container{
+.rank-container {
   width: 375px;
   height: 561px;
   top: 161px;
@@ -357,14 +356,14 @@ b {
   opacity: 0px;
 }
 
-.rank-MyRankingTitle{
+.rank-MyRankingTitle {
   width: 339px;
   height: 38px;
   padding: 4px 10px 4px 0px;
   gap: 0px;
   opacity: 0px;
 }
-.text-rank-title{
+.text-rank-title {
   font-family: Tmoney RoundWind;
   font-size: 17px;
   font-weight: 800;
@@ -372,9 +371,9 @@ b {
   color: #888888;
 }
 
-.image-share{
+.image-share {
   width: 30px;
-  height: 30px;;
+  height: 30px;
   padding: 4px 4px 4px 3px;
   gap: 10px;
   opacity: 0px;
@@ -382,7 +381,7 @@ b {
   line-height: 22.12px;
 }
 
-.rank-MyRankingBox{
+.rank-MyRankingBox {
   width: 339px;
   height: 40px;
   padding: 7px 15px 7px 15px;
@@ -390,11 +389,11 @@ b {
   border-radius: 20px;
   border: 1px 0px 0px 0px;
   opacity: 0px;
-  background-color: #F2F4F5;
+  background-color: #f2f4f5;
   margin-bottom: 30px;
 }
 
-.rank-RankingBox{
+.rank-RankingBox {
   width: 339px;
   height: 40px;
   padding: 7px 15px 7px 15px;
@@ -402,57 +401,57 @@ b {
   border-radius: 20px;
   border: 1px 0px 0px 0px;
   opacity: 0px;
-  background-color: #F2F4F5;
-  margin-top : 5px;
-  margin-bottom : 5px;
+  background-color: #f2f4f5;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
-.rank-First{
+.rank-First {
   width: 25px;
   height: 25px;
   padding: 2px 6px 2px 6px;
   gap: 10px;
   border-radius: 100px;
-  background-color : #FFCF23;
+  background-color: #ffcf23;
   font-family: Tmoney RoundWind;
   font-size: 14px;
   font-weight: 800;
   line-height: 18.21px;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
-.rank-Second{
+.rank-Second {
   width: 25px;
   height: 25px;
   padding: 2px 6px 2px 6px;
   gap: 10px;
   border-radius: 100px;
-  background-color : #9EBFDD;
+  background-color: #9ebfdd;
   font-family: Tmoney RoundWind;
   font-size: 14px;
   font-weight: 800;
   line-height: 18.21px;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
-.rank-Third{
+.rank-Third {
   width: 25px;
   height: 25px;
   padding: 2px 6px 2px 6px;
   gap: 10px;
   border-radius: 100px;
-  background-color : #E59143;
+  background-color: #e59143;
   font-family: Tmoney RoundWind;
   font-size: 14px;
   font-weight: 800;
   line-height: 18.21px;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
-.rank-ID{
+.rank-ID {
   font-family: Tmoney RoundWind;
   font-size: 15px;
   font-weight: 800;
@@ -461,7 +460,7 @@ b {
   color: #888888;
 }
 
-.rank-vector-container{
+.rank-vector-container {
   width: 339px;
   height: 33px;
   padding: 7px 15px 7px 15px;
@@ -469,15 +468,15 @@ b {
   opacity: 0px;
 }
 
-.img-vector{
+.img-vector {
   width: 2.95px;
   height: 14px;
   gap: 0px;
-  opacity: 0px;  
+  opacity: 0px;
   text-align: center;
 }
 
-.rank-stastic-box{
+.rank-stastic-box {
   width: 339px;
   height: 75px;
   padding: 9px 0px 9px 0px;
@@ -485,23 +484,22 @@ b {
   border-radius: 15px 15px 15px 15px;
   border: 1px 0px 0px 0px;
   opacity: 0px;
-  background-color: #F2F4F5;
-
+  background-color: #f2f4f5;
 }
 
-.rank-stastic-title{
+.rank-stastic-title {
   width: 339px;
   height: 26px;
   padding: 0px 5px 0px 5px;
 }
 
-.rank-stastic-contents{
+.rank-stastic-contents {
   width: 339px;
   height: 45px;
   padding: 0px 10px 10px 10px;
 }
 
-.rack-statstic-title-font{
+.rack-statstic-title-font {
   width: 164.5px;
   height: 26px;
   padding: 5px 0px 5px 15px;
@@ -512,10 +510,10 @@ b {
   font-weight: 800;
   line-height: 15.61px;
   text-align: center;
-  color: #AAAAAA;
+  color: #aaaaaa;
 }
 
-.rack-statstic-contents-font{
+.rack-statstic-contents-font {
   width: 159.5px;
   height: 35px;
   padding: 7px 0px 7px 0px;
@@ -525,32 +523,32 @@ b {
   font-weight: 800;
   line-height: 20.82px;
   text-align: center;
-  color: #58C76A;
+  color: #58c76a;
 }
 
-.additional-ranking-button{
+.additional-ranking-button {
   width: 159.5px;
   height: 34px;
   padding: 0px 37px 0px 37px;
   gap: 10px;
   border-radius: 20px;
   opacity: 0px;
-  background-color:#FFFFFF;
-  border : none;
+  background-color: #ffffff;
+  border: none;
 }
 
-.additional-additional-button{
+.additional-additional-button {
   width: 159.5px;
   height: 34px;
   padding: 0px 37px 0px 37px;
   gap: 10px;
   border-radius: 20px;
   opacity: 0px;
-  background-color: #58C76A;
-  border : none;
+  background-color: #58c76a;
+  border: none;
 }
 
-.additional-box{
+.additional-box {
   width: 375px;
   height: 561px;
   top: 161px;
@@ -559,27 +557,27 @@ b {
   opacity: 0px;
 }
 
-.additional-banner{
+.additional-banner {
   width: 339px;
   height: 80px;
   padding: 7px 15px 7px 15px;
   gap: 9px;
   border-radius: 15px 15px 15px 15px;
   border: 1px 0px 0px 0px;
-  opacity: 0px; 
-  background-color: #FFFFFF;
-  color : #58C76A;
+  opacity: 0px;
+  background-color: #ffffff;
+  color: #58c76a;
   font-family: Tmoney RoundWind;
   font-size: 16px;
   font-weight: 800;
   line-height: 65px;
   text-align: center;
-  border: 1px solid var(--Primary, #58C76A);
+  border: 1px solid var(--Primary, #58c76a);
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
-.setting-box{
+.setting-box {
   width: 375px;
   height: 630px;
   top: 92px;
@@ -588,7 +586,7 @@ b {
   opacity: 0px;
 }
 
-.setting-bar{
+.setting-bar {
   width: 339px;
   height: 48px;
   padding: 0px 0px 0px 15px;
