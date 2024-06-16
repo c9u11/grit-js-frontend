@@ -7,26 +7,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Category</title>
   <link rel="stylesheet" href="index.css" />
+  <script src="../utils/authGuard.js"></script>
 </head>
 
 <body>
-  <content class="form-content" style="align-items: start">
+  <content style="padding: 40px;">
     <h1 class="title">박준규님,<br />글잇에 오신 것을 환영합니다!</h1>
     <span class="left-text secondary-color">
       아래의 카테고리 중에서 <br />
       <b>관심있는 분야</b>를 <b>최대 3개</b> 골라주세요
     </span>
-    <button class="check-input">정치</button>
-    <button class="check-input">사회</button>
-    <button class="check-input">국제</button>
-    <button class="check-input checked">건강</button>
-    <button class="check-input checked">재테크</button>
-    <button class="check-input">스포츠</button>
-    <button class="check-input checked">문화·연예</button>
-    <button class="check-input" disabled>테스트</button>
-    <div class="category-margin"></div>
+    <button class="check-input" data-category="politics">정치</button>
+    <button class="check-input" data-category="national">사회</button>
+    <button class="check-input" data-category="international">국제</button>
+    <button class="check-input checked" data-category="medical">건강</button>
+    <button class="check-input" data-category="sports">스포츠</button>
+    <div class="blank-divier"></div>
     <button class="sumbit-button primary-button">완료</button>
   </content>
+  <script>
+    const buttons = document.querySelectorAll('.check-input');
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const checkedCount = document.querySelectorAll('.check-input.checked').length;
+        if (checkedCount >= 3 && !button.classList.contains('checked')) return;
+        button.classList.toggle('checked');
+      });
+    });
+
+    const submitButton = document.querySelector('.sumbit-button');
+    submitButton.addEventListener('click', () => {
+      const checkedButtons = document.querySelectorAll('.check-input.checked');
+      const categories = Array.from(checkedButtons).map((button) => button.getAttribute('data-category'));
+      console.log(categories);
+    });
+  </script>
 </body>
 
 </html>
