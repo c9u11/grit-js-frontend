@@ -7,23 +7,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SignUp</title>
   <link rel="stylesheet" href="index.css" />
+  <script src="../utils/api.js"></script>
 </head>
 
 <body>
-  <content class="form-content">
-    <h1 class="title">회원가입</h1>
-    <span class="secondary-text">
-      정보를 기입해주시고 회원가입을 진행해주세요.
-    </span>
-    <input type="text" placeholder="이름" class="text-input" />
-    <input type="email" placeholder="이메일" class="text-input" />
-    <input type="password" placeholder="비밀번호 6~20자" class="text-input" />
-    <button class="primary-button sumbit-button">회원가입</button>
-    <div>
-      <span class="secondary-text">이미 회원이신가요?</span>
-      <a class="primary-text" href="/login.html"><b>로그인</b></a>
-    </div>
+  <content>
+    <form class="form-content">
+      <h1 class="title">회원가입</h1>
+      <span class="secondary-text">
+        정보를 기입해주시고 회원가입을 진행해주세요.
+      </span>
+      <input type="text" placeholder="이름" class="text-input" required />
+      <input type="email" placeholder="이메일" class="text-input" required />
+      <input type="password" placeholder="비밀번호 6~20자" class="text-input" minlength="6" maxlength="20" required />
+      <button class="primary-button sumbit-button">회원가입</button>
+      <div>
+        <span class="secondary-text">이미 회원이신가요?</span>
+        <a class="primary-text" href="/login.html"><b>로그인</b></a>
+      </div>
+    </form>
   </content>
+  <script>
+    const form = document.querySelector('.form-content');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const username = form.querySelector('input[type="text"]').value;
+      const email = form.querySelector('input[type="email"]').value;
+      const password = form.querySelector('input[type="password"]').value;
+      const response = reqSignup(username, email, password);
+      if (response.code === 200) {
+        alert('회원가입이 완료되었습니다.');
+        location.href = './login.html';
+      } else {
+        alert('회원가입에 실패했습니다.');
+      }
+    });
+  </script>
 </body>
 
 </html>
