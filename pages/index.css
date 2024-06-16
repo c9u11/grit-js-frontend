@@ -137,14 +137,6 @@ b {
   cursor: pointer;
 }
 
-.third-button {
-  border: none;
-  border-radius: 6px;
-  background-color: var(--white-color);
-  color: var(--white-color);
-  cursor: pointer;
-}
-
 .primary-button:hover,
 .primary-button:active {
   background-color: var(--dark-primary-color);
@@ -152,11 +144,6 @@ b {
 
 .secondary-button:hover,
 .secondary-button:active {
-  background-color: var(--dark-primary-color);
-}
-
-.third-button:hover,
-.third-button:active {
   background-color: var(--dark-primary-color);
 }
 
@@ -185,7 +172,8 @@ b {
   color: #58c76a;
 }
 
-.right-image {
+/* 기존 코드 */
+/* .right-image {
   float: right;
 }
 
@@ -207,7 +195,7 @@ b {
 
 .home-middle-bar {
   width: 375px;
-  height: 630px; /*이거 fixed 붙이면 사이즈 조절은 되는데 가운데로 글자가 모임*/
+  height: 630px;
   top: 92px;
   padding: 12px 18px 12px 18px;
   gap: 16px;
@@ -600,4 +588,4 @@ b {
   text-align: left;
   color: #333333;
   font-size: 16px;
-}
+} */
