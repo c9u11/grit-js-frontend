@@ -6,28 +6,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="index.css">
+  <script src="../utils/authGuard.js"></script>
 </head>
 
 <body>
   <div class="container">
-    <div class="home-top-bar">
-      <span class="logo-text left-text">글잇</span>
-      <span class="right-image right-icon"><a href="setting.html"><img src="Right Icon.png" /></a></span>
+    <div class="top-bar">
+      <span class="logo">글잇</span>
+      <a class="icon-button setting" href="/pages/setting.html"></a>
     </div>
-    <div class="home-middle-bar">
-      <div class="black-text">오늘의 퀴즈</div>
-      <div class="grey-text left-text text-with-line">새로운 문제
-        <hr />
+    <content>
+      <h1 class="title">오늘의 퀴즈</h1>
+      <div class="articles solved">
+        <div class="banner hidden">
+          <img src="/images/celebration.svg" />
+          <span class="dark-gray-text">오늘의 퀴즈를 다 풀었어요!</span>
+          <span class="dark-gray-text">
+            <a class="link-text">랭킹</a>탭에서 내 등수를 확인해보세요
+          </span>
+        </div>
+        <div class="text-divider">새로운 문제</div>
+        <div class="article">
+          <div class="category">연애</div>
+          <div class="info">
+            <div class="title">박준규 이상형은?</div>
+            <div class="content">고윤정으로 밝혀져...당사자는 큰 충격!</div>
+          </div>
+        </div>
+        <div class="article">
+          <div class="category">연애</div>
+          <div class="info">
+            <div class="title">박준규 이상형은?</div>
+            <div class="content">고윤정으로 밝혀져...당사자는 큰 충격!</div>
+          </div>
+        </div>
+        <div class="article">
+          <div class="category">연애</div>
+          <div class="info">
+            <div class="title">박준규 이상형은?</div>
+            <div class="content">고윤정으로 밝혀져...당사자는 큰 충격!</div>
+          </div>
+        </div>
+        <div class="text-divider">푼 문제</div>
+        <div class="article solved">
+          <div class="category">연애</div>
+          <div class="info">
+            <div class="title">박준규 이상형은?</div>
+            <div class="content">고윤정으로 밝혀져...당사자는 큰 충격! 이 글을 얼마나 길게 써야 좌우 길이를 넘어갈까?</div>
+          </div>
+        </div>
       </div>
-      <div class="home-container-1">
-        <div class="image-ellipse text-white"><img src="Ellipse 1.png" /> 연애</div>
-        <div class="text-home-title">'박준규' 이상형 .......</div>
-        <div class="text-home-paragraph">'고윤정'으로 밝혀져 ... 당사자는 큰 충격 .. !</div>
-      </div>
-    </div>
-    <div class="home-bottom-bar">
-      <span><a href="home.html"><img src="Home(green).png" /></a></span>
-      <span><a href="rank.html"><img src="Rank(gray).png" /></a></span>
+    </content>
+    <div class="bottom-bar">
+      <a class="home active" href="/pages/home.html"></a>
+      <a class="rank" href="/pages/rank.html"></a>
     </div>
   </div>
 </body>

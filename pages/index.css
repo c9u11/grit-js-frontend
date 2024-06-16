@@ -47,11 +47,14 @@ body {
   align-items: center;
 }
 
-content {
+.container {
   width: 100vw;
   height: 100dvh;
   max-width: 576px;
   background-color: var(--white-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 b {
@@ -114,6 +117,15 @@ b {
   color: var(--gray-color);
 }
 
+.dark-gray-text {
+  color: var(--dark-gray-color);
+}
+
+.link-text {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .sumbit-button {
   width: 100%;
   padding: 12px;
@@ -164,14 +176,171 @@ b {
   font-family: "TmoneyRoundWindExtraBold";
 }
 
-.logo-text {
-  font-family: Tmoney RoundWind;
-  font-size: 23px;
-  font-weight: 800;
-  line-height: 29.92px;
-  color: #58c76a;
+.top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--light-gray-color);
+  padding: 12px 18px;
 }
 
+.logo {
+  font-family: "TmoneyRoundWindExtraBold";
+  font-size: 24px;
+  color: #58c76a;
+  width: fit-content;
+}
+
+.icon-button {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+}
+
+content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 12px 18px;
+  overflow-y: auto;
+}
+
+.articles {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+}
+
+.hidden {
+  display: none !important;
+}
+.banner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  height: 50%;
+}
+
+.article {
+  width: 100%;
+  height: 170px;
+  min-height: 170px;
+  background-color: var(--light-gray-color);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.article .category {
+  display: flex;
+  align-items: center;
+  font-family: "TmoneyRoundWindExtraBold";
+  font-size: 12px;
+  color: var(--white-color);
+  text-shadow: var(--black-color) 0px 0px 3px;
+}
+.article .category::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary-color);
+  border: 1px solid var(--white-color);
+  border-radius: 50%;
+  margin-right: 4px;
+}
+.article.solved .category::before {
+  background-color: var(--gray-color);
+}
+.article .info {
+  width: 100%;
+}
+.article .title {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  color: var(--black-color);
+}
+.article .content {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  color: var(--black-color);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+
+.text-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 9px;
+  color: var(--gray-color);
+}
+.text-divider::after {
+  content: "";
+  display: inline-block;
+  flex: 1;
+  height: 1px;
+  background-color: var(--gray-color);
+}
+
+.bottom-bar {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--light-gray-color);
+}
+
+.bottom-bar a {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a.home {
+  background: no-repeat center center url("/images/home.svg");
+}
+a.home.active {
+  background: no-repeat center center url("/images/home-active.svg");
+}
+a.rank {
+  background: no-repeat center center url("/images/rank.svg");
+}
+a.rank.active {
+  background: no-repeat center center url("/images/rank-active.svg");
+}
+a.setting {
+  background: no-repeat center center url("/images/setting.svg");
+}
+a.setting.active {
+  background: no-repeat center center url("/images/setting-active.svg");
+}
 /* 기존 코드 */
 /* .right-image {
   float: right;
