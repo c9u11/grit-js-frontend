@@ -1,4 +1,5 @@
 :root {
+  --light-primary-color: #def4e1;
   --primary-color: #58c76a;
   --dark-primary-color: #4ea65f;
   --light-gray-color: #f2f4f5;
@@ -6,6 +7,7 @@
   --dark-gray-color: #888;
   --white-color: #fff;
   --black-color: #333;
+  --red-color: #f65f3e;
 }
 
 @font-face {
@@ -57,6 +59,9 @@ body {
   align-items: center;
 }
 
+.bg-light-primary-color {
+  background-color: var(--light-primary-color);
+}
 b {
   font-family: "TmoneyRoundWindExtraBold";
   font-weight: normal;
@@ -187,6 +192,10 @@ b {
   background-color: var(--dark-primary-color);
 }
 
+.transparent {
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
 .check-input {
   border: none;
   border-radius: 6px;
@@ -324,7 +333,7 @@ content {
   text-overflow: ellipsis;
   word-break: break-all;
 }
-.blank-divier {
+.blank-divider {
   width: 100%;
   flex: 1;
   background-color: transparent;
@@ -379,6 +388,9 @@ a.setting {
 }
 a.setting.active {
   background: no-repeat center center url("/images/setting-active.svg");
+}
+a.arrow {
+  background: no-repeat center center url("/images/arrow.svg");
 }
 
 .tabs {
@@ -473,6 +485,96 @@ a.setting.active {
   justify-content: space-between;
   align-items: center;
 }
+
+.flex-column {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.quiz-article,
+.quiz-question {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 12px;
+  padding: 24px;
+  background-color: var(--white-color);
+  border-radius: 12px 12px 0px 0px;
+}
+.quiz-article .sentence {
+  font-size: 14px;
+}
+
+.quiz-question {
+  height: auto;
+  border-top: 1px solid var(--light-gray-color);
+  background-color: #fcfcfc;
+  border-radius: 0px 0px 12px 12px;
+}
+.quiz-question .question {
+  font-family: "TmoneyRoundWindExtraBold";
+  font-size: 14px;
+}
+.quiz-question .choices {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.quiz-question .choices .choice {
+  width: 100%;
+  font-size: 10px;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 8px;
+  padding: 14px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--black-color);
+  cursor: pointer;
+}
+
+.quiz-question .choices .choice.selected {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+}
+.quiz-question .choices .choice.wrong {
+  color: var(--red-color);
+  border-color: var(--red-color);
+}
+.quiz-question .choices .choice.correct {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+.quiz-question .choices .choice:nth-child(1):before {
+  content: "1.";
+}
+.quiz-question .choices .choice:nth-child(2):before {
+  content: "2.";
+}
+.quiz-question .choices .choice:nth-child(3):before {
+  content: "3.";
+}
+.quiz-question .choices .choice:nth-child(4):before {
+  content: "4.";
+}
+
+.pill {
+  padding: 5px 10px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-radius: 10px;
+  font-size: 9px;
+  font-family: "TmoneyRoundWindExtraBold";
+}
+
 /* 기존 코드 */
 /* .right-image {
   float: right;
