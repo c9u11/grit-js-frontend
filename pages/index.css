@@ -292,6 +292,7 @@ content {
   padding: 12px;
   border-radius: 6px;
   cursor: pointer;
+  text-decoration: none;
 }
 .article .category {
   display: flex;
