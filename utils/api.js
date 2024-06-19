@@ -39,3 +39,19 @@ const reqPostSelectedCategories = (selectedCategories) => {
   req.send(JSON.stringify({ selectedCategories }));
   return JSON.parse(req.responseText);
 }
+
+const reqGetTodayArticles = () => {
+  const req = new XMLHttpRequest();
+  req.open('GET', API_URL + '/articles/today', false);
+  req.setRequestHeader('authorization', localStorage.getItem('token'));
+  req.send();
+  return JSON.parse(req.responseText);
+}
+
+const reqGetSolvedArticles = (articleIds) => {
+  const req = new XMLHttpRequest();
+  req.open('GET', API_URL + '/articles/solved?articleIds=' + articleIds.join(','), false);
+  req.setRequestHeader('authorization', localStorage.getItem('token'));
+  req.send();
+  return JSON.parse(req.responseText);
+}

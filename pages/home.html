@@ -7,6 +7,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="index.css">
   <script src="../utils/authGuard.js"></script>
+  <script src="../utils/api.js"></script>
 </head>
 
 <body>
@@ -17,7 +18,7 @@
     </div>
     <content>
       <h1 class="title">오늘의 퀴즈</h1>
-      <div class="articles solved">
+      <div class="articles">
         <div class="banner hidden">
           <img src="/images/celebration.svg" />
           <span class="dark-gray-text">오늘의 퀴즈를 다 풀었어요!</span>
@@ -25,36 +26,8 @@
             <a class="link-text">랭킹</a>탭에서 내 등수를 확인해보세요
           </span>
         </div>
-        <div class="text-divider">새로운 문제</div>
-        <a href="/pages/quiz.html" class="article">
-          <div class="category">연애</div>
-          <div class="info">
-            <div class="title">박준규 이상형은?</div>
-            <div class="content">고윤정으로 밝혀져...당사자는 큰 충격!</div>
-          </div>
-        </a>
-        <a href="/pages/quiz.html" class="article">
-          <div class="category">연애</div>
-          <div class="info">
-            <div class="title">박준규 이상형은?</div>
-            <div class="content">고윤정으로 밝혀져...당사자는 큰 충격!</div>
-          </div>
-        </a>
-        <a href="/pages/quiz.html" class="article">
-          <div class="category">연애</div>
-          <div class="info">
-            <div class="title">박준규 이상형은?</div>
-            <div class="content">고윤정으로 밝혀져...당사자는 큰 충격!</div>
-          </div>
-        </a>
-        <div class="text-divider">푼 문제</div>
-        <a href="/pages/quiz.html" class="article solved">
-          <div class="category">연애</div>
-          <div class="info">
-            <div class="title">박준규 이상형은?</div>
-            <div class="content">고윤정으로 밝혀져...당사자는 큰 충격! 이 글을 얼마나 길게 써야 좌우 길이를 넘어갈까?</div>
-          </div>
-        </a>
+        <div class="new-quiz text-divider">새로운 문제</div>
+        <div class="solved-quiz text-divider">푼 문제</div>
       </div>
     </content>
     <div class="bottom-bar">
@@ -62,6 +35,62 @@
       <a class="rank" href="/pages/rank.html"></a>
     </div>
   </div>
+
+  <script>
+    const categories = reqGetCategories();
+    const articlesRes = reqGetTodayArticles();
+    console.log(articlesRes);
+    if (articlesRes.code !== 200) alert("오늘의 문제를 불러오는데 실패했습니다.");
+    else {
+      const solvedArticlesId = reqGetSolvedArticles(articlesRes.articles.map(article => article.id)).articleIds ?? [];
+      const newArticles = [];
+      const solvedArticles = [];
+      articlesRes.articles.forEach(article => {
+        if (solvedArticlesId.includes(article.id)) solvedArticles.push(article);
+        else newArticles.push(article);
+      });
+      const articlesEl = document.querySelector(".articles");
+      const bannerEl = articlesEl.querySelector(".banner");
+      const newArticlesEl = articlesEl.querySelector(".new-quiz.text-divider");
+      const solvedArticlesEl = articlesEl.querySelector(".solved-quiz.text-divider");
+
+      if (newArticles.length === 0) {
+        bannerEl.classList.remove("hidden");
+        newArticlesEl.classList.add("hidden");
+      }
+      if (solvedArticles.length === 0) solvedArticlesEl.classList.add("hidden");
+
+      newArticles.forEach(article => {
+        const articleCategory = categories.find(category => category.id === article.category_id).name;
+        const articleEl = document.createElement("a");
+        articleEl.href = `/pages/quiz.html?id=${article.id}`;
+        articleEl.classList.add("article");
+        articleEl.innerHTML = `
+            <div class="category">${articleCategory}</div>
+            <div class="info">
+              <div class="title">${article.title}</div>
+              <div class="content">${article.body}</div>
+            </div>
+          `;
+        newArticlesEl.after(articleEl);
+      });
+      solvedArticles.forEach(article => {
+        const articleEl = document.createElement("a");
+        articleEl.href = `/pages/quiz.html?id=${article.id}`;
+        articleEl.classList.add("article", "solved");
+        articleEl.innerHTML = `
+            <div class="category">${categories[article.category]}</div>
+            <div class="info">
+              <div class="title">${article.title}</div>
+              <div class="content">${article.content}</div>
+            </div>
+          `;
+        solvedArticlesEl.after(articleEl);
+      });
+
+    }
+
+  </script>
 </body>
 
 </html>
