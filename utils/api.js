@@ -74,7 +74,7 @@ const reqGetQuestion = (articleId) => {
 
 const reqGetHistory = (questionId) => {
   const req = new XMLHttpRequest();
-  req.open('GET', API_URL + '/history?question_id=' + questionId, false);
+  req.open('GET', API_URL + '/history?questionId=' + questionId, false);
   req.setRequestHeader('authorization', localStorage.getItem('token'));
   req.send();
   return JSON.parse(req.responseText);
