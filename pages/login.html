@@ -34,7 +34,8 @@
       const token = response.token;
       if (token) {
         localStorage.setItem('token', token);
-        location.href = '/pages/home.html';
+        if (response.selectedCategories?.length) location.href = '/pages/home.html';
+        else location.href = '/pages/category.html';
       } else {
         alert('로그인에 실패했습니다.');
       }
