@@ -63,3 +63,28 @@ const reqGetSolvedArticles = (articleIds) => {
   req.send();
   return JSON.parse(req.responseText);
 }
+
+const reqGetQuestion = (articleId) => {
+  const req = new XMLHttpRequest();
+  req.open('GET', API_URL + '/question?articleId=' + articleId, false);
+  req.setRequestHeader('authorization', localStorage.getItem('token'));
+  req.send();
+  return JSON.parse(req.responseText);
+}
+
+const reqGetHistory = (questionId) => {
+  const req = new XMLHttpRequest();
+  req.open('GET', API_URL + '/history?question_id=' + questionId, false);
+  req.setRequestHeader('authorization', localStorage.getItem('token'));
+  req.send();
+  return JSON.parse(req.responseText);
+}
+
+const reqPostAnswer = (questionId, answer) => {
+  const req = new XMLHttpRequest();
+  req.open('POST', API_URL + '/history', false);
+  req.setRequestHeader('Content-Type', 'application/json');
+  req.setRequestHeader('authorization', localStorage.getItem('token'));
+  req.send(JSON.stringify({ questionId, answer }));
+  return JSON.parse(req.responseText);
+}
