@@ -293,6 +293,9 @@ content {
   border-radius: 6px;
   cursor: pointer;
   text-decoration: none;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .article .category {
   display: flex;
@@ -323,6 +326,7 @@ content {
   text-align: center;
   font-size: 12px;
   color: var(--black-color);
+  color: var(--white-color);
 }
 .article .content {
   width: 100%;
@@ -333,6 +337,10 @@ content {
   white-space: nowrap;
   text-overflow: ellipsis;
   word-break: break-all;
+  color: var(--white-color);
+}
+.article .content * {
+  color: var(--white-color);
 }
 .blank-divider {
   width: 100%;
