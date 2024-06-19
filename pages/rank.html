@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="index.css">
+  <script src="../utils/authGuard.js"></script>
+  <script src="../utils/api.js"></script>
 </head>
 
 <body>
@@ -22,23 +24,11 @@
       <div class="sub-title space-between">
         나의 순위 <button class="primary-button">공유하기</button>
       </div>
-      <div class="rank-item">
+      <div id="myRank" class="rank-item">
         <span class="rank second">2</span>
         <span class="id">sshy0119</span>
       </div>
-      <div class="sub-title">모두의 순위</div>
-      <div class="rank-item">
-        <span class="rank first">1</span>
-        <span class="id">c9u11</span>
-      </div>
-      <div class="rank-item">
-        <span class="rank second">2</span>
-        <span class="id">sshy0119</span>
-      </div>
-      <div class="rank-item">
-        <span class="rank third">3</span>
-        <span class="id">noelleishere</span>
-      </div>
+      <div id="top-ranks" class="sub-title">모두의 순위</div>
       <div class="ellipse"></div>
       <div class="sub-title">학습 통계</div>
       <div class="rank-statistics">
@@ -57,6 +47,40 @@
       <a class="rank active" href="/pages/rank.html"></a>
     </div>
   </div>
+  <script>
+    const getRankClass = (rank) => {
+      if (rank === 1) return 'first';
+      if (rank === 2) return 'second';
+      if (rank === 3) return 'third';
+      return '';
+    }
+    const rankingRes = reqGetRanking();
+    if (rankingRes.code !== 200) {
+      alert('랭킹을 불러오는데 실패했습니다.');
+    }
+    else {
+      const ranking = rankingRes.ranking;
+      const userId = rankingRes.userId;
+      const mine = ranking.find((rank) => rank.user_id === userId);
+      const myRank = ranking.indexOf(mine) + 1;
+      document.getElementById('myRank').innerHTML = `
+        <span class="rank ${getRankClass(myRank)}">${myRank}</span>
+        <span class="id">${mine.username}</span>
+      `;
+
+      ranking.forEach((rank, index) => {
+        if (index > 3) return;
+        const rankClass = getRankClass(index + 1);
+        const rankItem = document.createElement('div');
+        rankItem.className = 'rank-item';
+        rankItem.innerHTML = `
+          <span class="rank ${rankClass}">${index + 1}</span>
+          <span class="id">${rank.username}</span>
+        `;
+        document.getElementById('top-ranks').after(rankItem);
+      });
+    }
+  </script>
 </body>
 
 </html>

@@ -443,6 +443,7 @@ a.arrow {
   align-items: center;
   color: var(--white-color);
   border-radius: 50%;
+  background-color: var(--gray-color);
 }
 
 .rank-item .rank.first {

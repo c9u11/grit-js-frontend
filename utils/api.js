@@ -88,3 +88,11 @@ const reqPostAnswer = (questionId, answer) => {
   req.send(JSON.stringify({ questionId, answer }));
   return JSON.parse(req.responseText);
 }
+
+const reqGetRanking = () => {
+  const req = new XMLHttpRequest();
+  req.open('GET', API_URL + '/ranking', false);
+  req.setRequestHeader('authorization', localStorage.getItem('token'));
+  req.send();
+  return JSON.parse(req.responseText);
+}
