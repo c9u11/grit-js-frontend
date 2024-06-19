@@ -212,6 +212,9 @@ b {
   border: 1px solid var(--primary-color);
 }
 
+.categories {
+}
+
 .top-bar {
   width: 100%;
   display: flex;
@@ -522,7 +525,7 @@ a.arrow {
   font-family: "TmoneyRoundWindExtraBold";
   font-size: 14px;
 }
-.quiz-question .choices {
+.choices {
   width: 100%;
   display: flex;
   flex-direction: column;
