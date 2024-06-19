@@ -27,6 +27,9 @@
           <div class="blank-divider center">
             <div class="ellipse"></div>
           </div>
+          <div class="right-container">
+            <a class="primary-button" target="_blank">기사 보기</a>
+          </div>
         </div>
         <div class="quiz-question">
           <span class="question">'기소'는 어떤 상황을 설명하는 단어인가요?</span>
@@ -58,6 +61,7 @@
     document.querySelector('.title').innerText = article.title;
     document.querySelector('.question').innerText = question.title;
     document.querySelector('.sentence').innerText = question.body;
+    document.querySelector('.right-container a').href = `https://www.chosun.com/${article.url}`;
     choiceElements.forEach((choice, idx) => {
       choice.innerText = question.choices[idx].body;
       choice.setAttribute('data-id', question.choices[idx].id);
@@ -87,7 +91,6 @@
       document.querySelector('.sumbit-button').disabled = true;
     }
     else {
-
       document.querySelector('.sumbit-button').addEventListener('click', () => {
         const selectedChoice = document.querySelector('.selected');
         if (!selectedChoice) {

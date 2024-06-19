@@ -212,9 +212,6 @@ b {
   border: 1px solid var(--primary-color);
 }
 
-.categories {
-}
-
 .top-bar {
   width: 100%;
   display: flex;
@@ -586,6 +583,12 @@ a.arrow {
   border-radius: 10px;
   font-size: 9px;
   font-family: "TmoneyRoundWindExtraBold";
+}
+
+.right-container {
+  width: 100%;
+  display: flex;
+  justify-content: end;
 }
 
 /* 기존 코드 */
