@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="index.css">
+  <script src="../utils/authGuard.js"></script>
+  <script src="../utils/api.js"></script>
 </head>
 
 <body>
@@ -29,16 +31,87 @@
         <div class="quiz-question">
           <span class="question">'기소'는 어떤 상황을 설명하는 단어인가요?</span>
           <div class="choices">
-            <span class="choice selected">선수가 경기에 참가하는 것</span>
-            <span class="choice wrong">검사가 법원에 특정인을 형사 재판에 회부하도록 신청하는 것</span>
-            <span class="choice correct">경찰이 범죄 혐장을 조사하는 것</span>
-            <span class="choice">선수가 경기에 참가하는 것</span>
+            <button class="choice">선수가 경기에 참가하는 것</button>
+            <button class="choice">검사가 법원에 특정인을 형사 재판에 회부하도록 신청하는 것</button>
+            <button class="choice">경찰이 범죄 혐장을 조사하는 것</button>
+            <button class="choice">선수가 경기에 참가하는 것</button>
           </div>
+          <button class="primary-button sumbit-button">제출</button>
         </div>
       </div>
     </content>
   </div>
+  <script>
+    const query = new URLSearchParams(window.location.search);
+    const articleId = query.get('id');
+    const categories = reqGetCategories();
+    const articleRes = reqGetArticle(articleId);
+    const article = articleRes.article[0];
+    const questionRes = reqGetQuestion(articleId);
+    const question = questionRes.question;
+    const history = reqGetHistory(question.id);
 
+    const choiceElements = document.querySelectorAll('.choice');
+    console.log(question);
+
+    document.querySelector('.pill').innerText = categories.find(category => category.id === article.category_id).name;
+    document.querySelector('.title').innerText = article.title;
+    document.querySelector('.question').innerText = question.title;
+    document.querySelector('.sentence').innerText = question.body;
+    choiceElements.forEach((choice, idx) => {
+      choice.innerText = question.choices[idx].body;
+      choice.setAttribute('data-id', question.choices[idx].id);
+    });
+
+    choiceElements.forEach((choice, idx) => {
+      choice.addEventListener('click', () => {
+        choiceElements.forEach((choice) => {
+          choice.classList.remove('selected');
+        });
+        choice.classList.add('selected');
+      });
+    });
+
+    if (history.histories?.length) {
+      choiceElements.forEach((choice, idx) => {
+        choice.disabled = true;
+        if (question.answer === idx) {
+          choice.classList.add('correct');
+        }
+        if (+history.histories[0].selected_choice === +choice.getAttribute('data-id')) {
+          if (question.answer !== idx) {
+            choice.classList.add('wrong');
+          }
+        }
+      });
+      document.querySelector('.sumbit-button').disabled = true;
+    }
+    else {
+
+      document.querySelector('.sumbit-button').addEventListener('click', () => {
+        const selectedChoice = document.querySelector('.selected');
+        if (!selectedChoice) {
+          alert('선택지를 선택해주세요.');
+          return;
+        }
+        const selectedChoiceIdx = Array.from(choiceElements).indexOf(selectedChoice);
+        const isCorrect = question.answer === selectedChoiceIdx;
+
+        choiceElements.forEach((choice, idx) => {
+          choice.classList.remove('selected');
+          choice.disabled = true;
+          if (question.answer === idx) {
+            choice.classList.add('correct');
+          }
+          if (selectedChoiceIdx === idx && !isCorrect) {
+            choice.classList.add('wrong');
+          }
+        });
+        reqPostAnswer(question.id, selectedChoice.getAttribute('data-id'));
+        document.querySelector('.sumbit-button').disabled = true;
+      });
+    }
+  </script>
 </body>
 
 </html>

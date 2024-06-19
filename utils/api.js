@@ -40,6 +40,14 @@ const reqPostSelectedCategories = (selectedCategories) => {
   return JSON.parse(req.responseText);
 }
 
+const reqGetArticle = (articleId) => {
+  const req = new XMLHttpRequest();
+  req.open('GET', API_URL + '/articles?articleId=' + articleId, false);
+  req.setRequestHeader('authorization', localStorage.getItem('token'));
+  req.send();
+  return JSON.parse(req.responseText);
+}
+
 const reqGetTodayArticles = () => {
   const req = new XMLHttpRequest();
   req.open('GET', API_URL + '/articles/today', false);
