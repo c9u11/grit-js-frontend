@@ -34,11 +34,11 @@
       <div class="rank-statistics">
         <div class="item">
           <span class="title">학습 횟수</span>
-          <span class="content">21</span>
+          <span id="statistics-total" class="content">21</span>
         </div>
         <div class="item">
-          <span class="title">평균 점수</span>
-          <span class="content">78</span>
+          <span class="title">정답률</span>
+          <span id="statistics-accuracy-rate" class="content">78</span>
         </div>
       </div>
     </content>
@@ -79,6 +79,17 @@
         `;
         document.getElementById('top-ranks').after(rankItem);
       });
+    }
+
+    const statisticsRes = reqGetStatistics();
+    console.log(statisticsRes);
+    if (statisticsRes.code !== 200) {
+      alert('학습 통계를 불러오는데 실패했습니다.');
+    }
+    else {
+      const statistics = statisticsRes.statistics;
+      document.getElementById('statistics-total').innerText = statistics.total;
+      document.getElementById('statistics-accuracy-rate').innerText = statistics.accuracy_rate * 100 + '%';
     }
   </script>
 </body>

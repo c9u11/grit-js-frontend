@@ -96,3 +96,11 @@ const reqGetRanking = () => {
   req.send();
   return JSON.parse(req.responseText);
 }
+
+const reqGetStatistics = () => {
+  const req = new XMLHttpRequest();
+  req.open('GET', API_URL + '/statistics', false);
+  req.setRequestHeader('authorization', localStorage.getItem('token'));
+  req.send();
+  return JSON.parse(req.responseText);
+}
