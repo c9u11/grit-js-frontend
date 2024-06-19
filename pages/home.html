@@ -23,7 +23,7 @@
           <img src="/images/celebration.svg" />
           <span class="dark-gray-text">오늘의 퀴즈를 다 풀었어요!</span>
           <span class="dark-gray-text">
-            <a class="link-text">랭킹</a>탭에서 내 등수를 확인해보세요
+            <a class="link-text" href="/pages/rank.html">랭킹</a>탭에서 내 등수를 확인해보세요
           </span>
         </div>
         <div class="new-quiz text-divider">새로운 문제</div>
@@ -76,16 +76,18 @@
         newArticlesEl.after(articleEl);
       });
       solvedArticles.forEach(article => {
+        const articleCategory = categories.find(category => category.id === article.category_id).name;
         const articleEl = document.createElement("a");
         articleEl.href = `/pages/quiz.html?id=${article.id}`;
         articleEl.classList.add("article", "solved");
         articleEl.innerHTML = `
-            <div class="category">${categories[article.category]}</div>
+            <div class="category">${articleCategory}</div>
             <div class="info">
               <div class="title">${article.title}</div>
               <div class="content">${article.content}</div>
             </div>
           `;
+        articleEl.style.backgroundImage = `linear-gradient(rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)), url(${article.image_url})`;
         solvedArticlesEl.after(articleEl);
       });
 
