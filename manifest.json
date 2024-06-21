@@ -1,0 +1,16 @@
+{
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "name": "grit",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "grit",
+  "start_url": "/pages/login.html",
+  "theme_color": "#ffffff",
+  "id": "grit platform",
+  "categories": [
+    "education",
+    "lifestyle",
+    "news"
+  ]
+}
